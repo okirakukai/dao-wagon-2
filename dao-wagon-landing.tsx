@@ -48,7 +48,7 @@ export default function Component() {
 
               <div className="w-full max-w-4xl">
                 <Image
-                  src="/placeholder.svg?height=600&width=800"
+                  src="/images/dao-wagon-hero.png"
                   alt="DAOワゴン - 日本地図とルート"
                   width={800}
                   height={600}
@@ -230,7 +230,7 @@ export default function Component() {
                 <CardHeader className="text-center">
                   <div className="flex justify-center mb-4">
                     <Image
-                      src="/placeholder.svg?height=60&width=200"
+                      src="/images/alyawmu-logo.png"
                       alt="Alyawmu ロゴ"
                       width={200}
                       height={60}
