@@ -48,22 +48,13 @@ export default function Component() {
 
               <div className="w-full max-w-4xl">
                 <Image
-                  src="/images/dao-wagon-hero.png"
+                  src="/placeholder.svg?height=600&width=800"
                   alt="DAOワゴン - 日本地図とルート"
                   width={800}
                   height={600}
                   className="mx-auto rounded-lg shadow-2xl"
                   priority
                 />
-              </div>
-
-              <div className="flex flex-col gap-4 min-[400px]:flex-row">
-                <Button size="lg" variant="outline" className="border-red-500 text-red-500 hover:bg-red-50">
-                  プロジェクト詳細を見る
-                </Button>
-                <Button size="lg" variant="secondary">
-                  過去の実績を確認
-                </Button>
               </div>
             </div>
           </div>
@@ -239,7 +230,7 @@ export default function Component() {
                 <CardHeader className="text-center">
                   <div className="flex justify-center mb-4">
                     <Image
-                      src="/images/alyawmu-logo.png"
+                      src="/placeholder.svg?height=60&width=200"
                       alt="Alyawmu ロゴ"
                       width={200}
                       height={60}
@@ -273,21 +264,48 @@ export default function Component() {
 
                   <Card className="text-center border-2 hover:border-blue-200 transition-colors">
                     <CardHeader>
-                      <CardTitle className="text-lg">鳥取市佐治町</CardTitle>
+                      <CardTitle className="text-lg">
+                        <Link
+                          href="https://www.city.tottori.lg.jp/www/index.html"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-blue-600 transition-colors"
+                        >
+                          鳥取市佐治町
+                        </Link>
+                      </CardTitle>
                       <CardDescription>自然豊かな中山間地域</CardDescription>
                     </CardHeader>
                   </Card>
 
                   <Card className="text-center border-2 hover:border-blue-200 transition-colors">
                     <CardHeader>
-                      <CardTitle className="text-lg">香川県琴平町</CardTitle>
+                      <CardTitle className="text-lg">
+                        <Link
+                          href="https://www.town.kotohira.kagawa.jp/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-blue-600 transition-colors"
+                        >
+                          香川県琴平町
+                        </Link>
+                      </CardTitle>
                       <CardDescription>こんぴらさんの門前町</CardDescription>
                     </CardHeader>
                   </Card>
 
                   <Card className="text-center border-2 hover:border-blue-200 transition-colors">
                     <CardHeader>
-                      <CardTitle className="text-lg">富山舟橋村</CardTitle>
+                      <CardTitle className="text-lg">
+                        <Link
+                          href="https://www.vill.funahashi.toyama.jp/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-blue-600 transition-colors"
+                        >
+                          富山県舟橋村
+                        </Link>
+                      </CardTitle>
                       <CardDescription>日本一小さな村</CardDescription>
                     </CardHeader>
                   </Card>
@@ -308,18 +326,6 @@ export default function Component() {
                 <p className="mx-auto max-w-[600px] text-red-100 md:text-xl">
                   新しい仲間との出会いと地域の魅力発見。 DAOワゴンプロジェクトで実現した特別な体験をご覧ください。
                 </p>
-              </div>
-              <div className="flex flex-col gap-4 min-[400px]:flex-row">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-red-500"
-                >
-                  プロジェクト詳細
-                </Button>
-                <Button size="lg" variant="secondary" className="bg-white text-red-500 hover:bg-gray-100">
-                  過去の実績を見る
-                </Button>
               </div>
             </div>
           </div>
