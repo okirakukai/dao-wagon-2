@@ -112,100 +112,139 @@ export default function Component() {
                   ルート情報
                 </h2>
                 <p className="mx-auto max-w-[800px] text-gray-600 md:text-xl">
-                  第2回DAOワゴンは2つのコースが富山県舟橋村で合流する特別なルートです。
+                  DAOワゴンプロジェクトの現在実施中のルートと、未来に向けた構想ルートをご紹介します。
                 </p>
               </div>
 
               <div className="grid gap-8 lg:grid-cols-2 w-full max-w-6xl">
-                {/* Course 1 */}
+                {/* Route 1 */}
                 <Card className="border-2 border-blue-200">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
                       <Badge variant="secondary" className="bg-blue-100 text-blue-800">
-                        コース1
+                        ルート1
                       </Badge>
-                      静岡スタートルート
+                      関西周遊ルート
                     </CardTitle>
-                    <CardDescription>静岡から始まり、各地を巡って東京まで</CardDescription>
+                    <CardDescription>新大阪をスタート地点とした関西エリア周遊</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-3">
                       <div className="flex items-center gap-2 text-sm">
                         <MapPin className="h-4 w-4 text-blue-500" />
-                        <span className="font-medium">静岡</span>（スタート）
+                        <span className="font-medium">新大阪</span>（スタート）
                       </div>
                       <div className="flex items-center gap-2 text-sm">
                         <MapPin className="h-4 w-4 text-blue-500" />
-                        <span className="font-medium">滋賀彦根</span>（乗車地点）
-                      </div>
-                      <div className="flex items-center gap-2 text-sm">
-                        <MapPin className="h-4 w-4 text-red-500" />
-                        <span className="font-medium">富山県舟橋村</span>（合流地点）
+                        <span className="font-medium">鳥取市佐治町</span>
                       </div>
                       <div className="flex items-center gap-2 text-sm">
                         <MapPin className="h-4 w-4 text-blue-500" />
-                        <span className="font-medium">大阪 → 滋賀彦根 → 長野松本 → 長野上田</span>
+                        <span className="font-medium">岡山</span>
                       </div>
                       <div className="flex items-center gap-2 text-sm">
                         <MapPin className="h-4 w-4 text-blue-500" />
-                        <span className="font-medium">栃木県宇都宮 → 東京あきる野</span>（ゴール）
+                        <span className="font-medium">姫路</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm">
+                        <MapPin className="h-4 w-4 text-blue-500" />
+                        <span className="font-medium">新大阪</span>（ゴール）
                       </div>
                     </div>
                   </CardContent>
                 </Card>
 
-                {/* Course 2 */}
+                {/* Route 2 */}
                 <Card className="border-2 border-green-200">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
                       <Badge variant="secondary" className="bg-green-100 text-green-800">
-                        コース2
+                        ルート2
                       </Badge>
-                      福島スタートルート
+                      北陸・関西ルート
                     </CardTitle>
-                    <CardDescription>福島から新潟を経由して合流地点へ</CardDescription>
+                    <CardDescription>富山から関西エリアへの周遊</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-3">
                       <div className="flex items-center gap-2 text-sm">
                         <MapPin className="h-4 w-4 text-green-500" />
-                        <span className="font-medium">福島浄土平</span>（スタート）
+                        <span className="font-medium">富山県舟橋村</span>（スタート）
                       </div>
                       <div className="flex items-center gap-2 text-sm">
                         <MapPin className="h-4 w-4 text-green-500" />
-                        <span className="font-medium">新潟</span>（経由地）
+                        <span className="font-medium">姫路</span>
                       </div>
                       <div className="flex items-center gap-2 text-sm">
-                        <MapPin className="h-4 w-4 text-red-500" />
-                        <span className="font-medium">富山県舟橋村</span>（合流地点）
+                        <MapPin className="h-4 w-4 text-green-500" />
+                        <span className="font-medium">岡山</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm">
+                        <MapPin className="h-4 w-4 text-green-500" />
+                        <span className="font-medium">鳥取市佐治町</span>（ゴール）
                       </div>
                     </div>
                   </CardContent>
                 </Card>
               </div>
 
-              {/* Previous Route */}
-              <Card className="w-full max-w-4xl border-2 border-orange-200">
+              {/* Future Route 1 */}
+              <Card className="w-full max-w-4xl border-2 border-purple-200">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Badge variant="secondary" className="bg-orange-100 text-orange-800">
-                      第1回
+                    <Badge variant="secondary" className="bg-purple-100 text-purple-800">
+                      未来ルート1
                     </Badge>
-                    四国瀬戸内一周ルート（完了）
+                    西日本・中部・関東縦断
                   </CardTitle>
-                  <CardDescription>記念すべき第1回DAOワゴンの成功ルート</CardDescription>
+                  <CardDescription>鳥取から関東まで日本を縦断する壮大なルート（構想中）</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
-                    {["岡山", "香川", "高知", "今治", "岡山"].map((location, index) => (
+                    {[
+                      "鳥取市佐治町",
+                      "和歌山県橋本市",
+                      "和歌山県白浜町",
+                      "長野県上田市",
+                      "長野県松本市",
+                      "東京",
+                      "栃木",
+                    ].map((location, index) => (
                       <div key={location} className="flex items-center gap-1">
-                        <Badge variant="outline" className="text-orange-600 border-orange-300">
+                        <Badge variant="outline" className="text-purple-600 border-purple-300">
                           {location}
                         </Badge>
-                        {index < 4 && <span className="text-orange-400">→</span>}
+                        {index < 6 && <span className="text-purple-400">→</span>}
                       </div>
                     ))}
                   </div>
+                  <p className="text-gray-600 mt-4 text-center">構想中</p>
+                </CardContent>
+              </Card>
+
+              {/* Future Route 2 */}
+              <Card className="w-full max-w-4xl border-2 border-amber-200">
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Badge variant="secondary" className="bg-amber-100 text-amber-800">
+                      未来ルート2
+                    </Badge>
+                    関東・東北周遊
+                  </CardTitle>
+                  <CardDescription>関東から東北エリアを巡るルート（構想中）</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    {["東京", "栃木", "仙台", "栃木", "東京"].map((location, index) => (
+                      <div key={location} className="flex items-center gap-1">
+                        <Badge variant="outline" className="text-amber-600 border-amber-300">
+                          {location}
+                        </Badge>
+                        {index < 4 && <span className="text-amber-400">→</span>}
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-gray-600 mt-4 text-center">構想中</p>
                 </CardContent>
               </Card>
             </div>
