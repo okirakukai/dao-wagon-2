@@ -117,106 +117,147 @@ export default function Component() {
               </div>
 
               <div className="grid gap-8 lg:grid-cols-2 w-full max-w-6xl">
-                {/* Route 1 */}
-                <Card className="border-2 border-blue-200">
+                {/* Route 1 - Season 1 */}
+                <Card className="border-2 border-gray-300">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
-                      <Badge variant="secondary" className="bg-blue-100 text-blue-800">
-                        ルート1
+                      <Badge variant="secondary" className="bg-gray-100 text-gray-800">
+                        シーズン1（過去）
                       </Badge>
-                      関西周遊ルート
+                      四国周遊ルート
                     </CardTitle>
-                    <CardDescription>新大阪をスタート地点とした関西エリア周遊</CardDescription>
+                    <CardDescription>四国地域を周遊するプロジェクトの最初のシーズン</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-3">
                       <div className="flex items-center gap-2 text-sm">
-                        <MapPin className="h-4 w-4 text-blue-500" />
-                        <span className="font-medium">新大阪</span>（スタート）
+                        <MapPin className="h-4 w-4 text-gray-500" />
+                        <span className="font-medium">四国各地</span>
                       </div>
+                      <p className="text-gray-600 text-sm mt-4">
+                        DAOワゴンプロジェクトの最初のシーズンとして、四国地域の各地を周遊しました。
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Route 2 - Season 2 */}
+                <Card className="border-2 border-gray-300">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      <Badge variant="secondary" className="bg-gray-100 text-gray-800">
+                        シーズン2（過去）
+                      </Badge>
+                      関西・北陸周遊ルート
+                    </CardTitle>
+                    <CardDescription>関西・北陸エリアの2つのルート</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      <p className="font-medium text-sm">関西周遊ルート：</p>
                       <div className="flex items-center gap-2 text-sm">
-                        <MapPin className="h-4 w-4 text-blue-500" />
-                        <span className="font-medium">鳥取市佐治町</span>
+                        <MapPin className="h-4 w-4 text-gray-500" />
+                        <span>新大阪 → 鳥取市佐治町 → 岡山 → 姫路 → 新大阪</span>
                       </div>
+                      <p className="font-medium text-sm mt-4">北陸・関西ルート：</p>
                       <div className="flex items-center gap-2 text-sm">
-                        <MapPin className="h-4 w-4 text-blue-500" />
-                        <span className="font-medium">岡山</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-sm">
-                        <MapPin className="h-4 w-4 text-blue-500" />
-                        <span className="font-medium">姫路</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-sm">
-                        <MapPin className="h-4 w-4 text-blue-500" />
-                        <span className="font-medium">新大阪</span>（ゴール）
+                        <MapPin className="h-4 w-4 text-gray-500" />
+                        <span>富山県舟橋村 → 姫路 → 岡山 → 鳥取市佐治町</span>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
 
-                {/* Route 2 */}
-                <Card className="border-2 border-green-200">
+                {/* Season 3 */}
+                <Card className="border-2 border-yellow-200 lg:col-span-2">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
-                      <Badge variant="secondary" className="bg-green-100 text-green-800">
-                        ルート2
+                      <Badge variant="secondary" className="bg-yellow-100 text-yellow-800">
+                        シーズン3（現在実施中）
                       </Badge>
-                      北陸・関西ルート
+                      鳥取～東京ルート
                     </CardTitle>
-                    <CardDescription>富山から関西エリアへの周遊</CardDescription>
+                    <CardDescription>鳥取から長野を経由して東京へ至る壮大なルート</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <div className="space-y-3">
-                      <div className="flex items-center gap-2 text-sm">
-                        <MapPin className="h-4 w-4 text-green-500" />
-                        <span className="font-medium">富山県舟橋村</span>（スタート）
-                      </div>
-                      <div className="flex items-center gap-2 text-sm">
-                        <MapPin className="h-4 w-4 text-green-500" />
-                        <span className="font-medium">姫路</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-sm">
-                        <MapPin className="h-4 w-4 text-green-500" />
-                        <span className="font-medium">岡山</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-sm">
-                        <MapPin className="h-4 w-4 text-green-500" />
-                        <span className="font-medium">鳥取市佐治町</span>（ゴール）
-                      </div>
+                    <div className="flex flex-wrap gap-2">
+                      {["鳥取市佐治町", "和歌山県白浜町", "長野県上田市", "長野県松本市", "東京"].map(
+                        (location, index) => (
+                          <div key={location} className="flex items-center gap-1">
+                            {index === 0 && <span className="text-yellow-600 font-semibold text-sm">スタート：</span>}
+                            <Badge variant="outline" className="text-yellow-600 border-yellow-300">
+                              {location}
+                            </Badge>
+                            {index < 4 && <span className="text-yellow-400">→</span>}
+                            {index === 4 && <span className="text-yellow-600 font-semibold text-sm ml-1">ゴール</span>}
+                          </div>
+                        ),
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Season 4 */}
+                <Card className="border-2 border-red-200 lg:col-span-2">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      <Badge variant="secondary" className="bg-red-100 text-red-800">
+                        シーズン4（11月12日～15日）
+                      </Badge>
+                      東京～鳥取佐治ルート
+                    </CardTitle>
+                    <CardDescription>東京から中部・関西・四国を経由して鳥取佐治へ至る新しいルート</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="flex flex-wrap gap-2">
+                      {[
+                        "東京",
+                        "愛知県小牧市",
+                        "滋賀県東近江市",
+                        "和歌山県橋本市",
+                        "兵庫県姫路市",
+                        "香川県琴平町",
+                        "香川県高松市",
+                        "岡山県岡山市",
+                        "岡山県西粟倉村",
+                        "鳥取市佐治町",
+                      ].map((location, index) => (
+                        <div key={location} className="flex items-center gap-1">
+                          {index === 0 && <span className="text-red-600 font-semibold text-sm">スタート：</span>}
+                          <Badge variant="outline" className="text-red-600 border-red-300">
+                            {location}
+                          </Badge>
+                          {index < 9 && <span className="text-red-400">→</span>}
+                          {index === 9 && <span className="text-red-600 font-semibold text-sm ml-1">ゴール</span>}
+                        </div>
+                      ))}
                     </div>
                   </CardContent>
                 </Card>
               </div>
 
-              {/* Future Route 1 */}
               <Card className="w-full max-w-4xl border-2 border-purple-200">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Badge variant="secondary" className="bg-purple-100 text-purple-800">
-                      未来ルート1
+                      将来構想1
                     </Badge>
-                    西日本・中部・関東縦断
+                    鳥取佐治～九州ルート
                   </CardTitle>
-                  <CardDescription>鳥取から関東まで日本を縦断する壮大なルート（構想中）</CardDescription>
+                  <CardDescription>鳥取から九州へ向かう壮大なルート（構想中）</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
-                    {[
-                      "鳥取市佐治町",
-                      "和歌山県橋本市",
-                      "和歌山県白浜町",
-                      "長野県上田市",
-                      "長野県松本市",
-                      "東京",
-                      "栃木",
-                    ].map((location, index) => (
-                      <div key={location} className="flex items-center gap-1">
-                        <Badge variant="outline" className="text-purple-600 border-purple-300">
-                          {location}
-                        </Badge>
-                        {index < 6 && <span className="text-purple-400">→</span>}
-                      </div>
-                    ))}
+                    {["鳥取市佐治町", "兵庫県", "岡山県", "広島県", "福岡県", "大分県", "宮崎県"].map(
+                      (location, index) => (
+                        <div key={location} className="flex items-center gap-1">
+                          <Badge variant="outline" className="text-purple-600 border-purple-300">
+                            {location}
+                          </Badge>
+                          {index < 6 && <span className="text-purple-400">→</span>}
+                        </div>
+                      ),
+                    )}
                   </div>
                   <p className="text-gray-600 mt-4 text-center">構想中</p>
                 </CardContent>
@@ -227,20 +268,20 @@ export default function Component() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Badge variant="secondary" className="bg-amber-100 text-amber-800">
-                      未来ルート2
+                      将来構想2
                     </Badge>
-                    関東・東北周遊
+                    東京～新潟～仙台ルート
                   </CardTitle>
-                  <CardDescription>関東から東北エリアを巡るルート（構想中）</CardDescription>
+                  <CardDescription>東京から新潟・東北エリアを巡るルート（構想中）</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
-                    {["東京", "栃木", "仙台", "栃木", "東京"].map((location, index) => (
+                    {["東京", "山梨県", "長野県", "新潟県", "秋田県", "宮城県仙台市"].map((location, index) => (
                       <div key={location} className="flex items-center gap-1">
                         <Badge variant="outline" className="text-amber-600 border-amber-300">
                           {location}
                         </Badge>
-                        {index < 4 && <span className="text-amber-400">→</span>}
+                        {index < 5 && <span className="text-amber-400">→</span>}
                       </div>
                     ))}
                   </div>
@@ -296,6 +337,70 @@ export default function Component() {
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
                   <Card className="text-center border-2 hover:border-blue-200 transition-colors">
                     <CardHeader>
+                      <CardTitle className="text-lg">
+                        <Link
+                          href="https://www.town.shirahama.wakayama.jp/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-blue-600 transition-colors"
+                        >
+                          和歌山県白浜町
+                        </Link>
+                      </CardTitle>
+                      <CardDescription>南紀白浜の観光地</CardDescription>
+                    </CardHeader>
+                  </Card>
+
+                  <Card className="text-center border-2 hover:border-blue-200 transition-colors">
+                    <CardHeader>
+                      <CardTitle className="text-lg">
+                        <Link
+                          href="https://www.city.hashimoto.wakayama.jp/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-blue-600 transition-colors"
+                        >
+                          和歌山県橋本市
+                        </Link>
+                      </CardTitle>
+                      <CardDescription>高野山の玄関口</CardDescription>
+                    </CardHeader>
+                  </Card>
+
+                  <Card className="text-center border-2 hover:border-blue-200 transition-colors">
+                    <CardHeader>
+                      <CardTitle className="text-lg">
+                        <Link
+                          href="https://www.vill.yamanakako.lg.jp/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-blue-600 transition-colors"
+                        >
+                          山梨県山中湖村
+                        </Link>
+                      </CardTitle>
+                      <CardDescription>富士山麓の山中湖畔</CardDescription>
+                    </CardHeader>
+                  </Card>
+
+                  <Card className="text-center border-2 hover:border-blue-200 transition-colors">
+                    <CardHeader>
+                      <CardTitle className="text-lg">
+                        <Link
+                          href="https://www.town.jinsekikogen.lg.jp/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-blue-600 transition-colors"
+                        >
+                          広島県神石高原町
+                        </Link>
+                      </CardTitle>
+                      <CardDescription>中国山地の自然豊かな町</CardDescription>
+                    </CardHeader>
+                  </Card>
+
+                  <Card className="text-center border-2 hover:border-blue-200 transition-colors">
+                    <CardHeader>
                       <CardTitle className="text-lg">地域おこし協力隊</CardTitle>
                       <CardDescription>地域活性化の推進</CardDescription>
                     </CardHeader>
@@ -313,7 +418,7 @@ export default function Component() {
                           鳥取市佐治町
                         </Link>
                       </CardTitle>
-                      <CardDescription>自然豊かな中山間地域</CardDescription>
+                      <CardDescription>星の最もきれいな場所</CardDescription>
                     </CardHeader>
                   </Card>
 
