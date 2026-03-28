@@ -198,8 +198,14 @@ export default function Component() {
               <Card className="w-full max-w-3xl border-4 border-orange-200 shadow-xl bg-white/80 backdrop-blur-sm">
                 <CardContent className="p-6 md:p-8">
                   <div className="flex flex-col md:flex-row gap-6 items-center">
-                    <div className="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center text-white text-4xl md:text-5xl font-bold shadow-lg shrink-0">
-                      B
+                    <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden shadow-lg shrink-0 border-4 border-orange-300">
+                      <Image
+                        src="/images/budouchan-profile.png"
+                        alt="ブドウちゃん"
+                        width={160}
+                        height={160}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
                     <div className="flex-1 text-center md:text-left">
                       <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">ブドウちゃん</h3>
