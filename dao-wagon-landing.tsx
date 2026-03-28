@@ -489,7 +489,7 @@ export default function Component() {
                 <h3 className="text-xl font-bold text-center mb-6 text-gray-900">協力自治体・団体</h3>
                 <div className="grid gap-4 grid-cols-2 md:grid-cols-4">
                   {[
-                    { name: "鳥取市佐治町", desc: "星の最もきれいな場所", url: "https://www.city.tottori.lg.jp/www/index.html" },
+                    { name: "鳥取市佐治町", desc: "星の最もきれいな場所", url: "https://www.instagram.com/sajidao2025" },
                     { name: "香川県琴平町", desc: "こんぴらさんの門前町", url: "https://www.town.kotohira.kagawa.jp/" },
                     { name: "富山県舟橋村", desc: "日本一小さな村", url: "https://www.vill.funahashi.toyama.jp/" },
                     { name: "和歌山県白浜町", desc: "南紀白浜の観光地", url: "https://www.town.shirahama.wakayama.jp/" },
