@@ -416,9 +416,13 @@ export default function Component() {
                 <Card className="border-2 border-orange-100 hover:border-orange-300 hover:shadow-lg transition-all">
                   <CardContent className="p-6">
                     <div className="flex flex-col items-center text-center gap-4">
-                      <div className="w-[120px] h-[120px] rounded-full bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center text-white text-4xl font-bold border-4 border-orange-200">
-                        B
-                      </div>
+                      <Image
+                        src="/images/budouchan-profile.png"
+                        alt="ブドウちゃん"
+                        width={120}
+                        height={120}
+                        className="rounded-full border-4 border-orange-200"
+                      />
                       <div>
                         <h3 className="text-xl font-bold text-gray-900">ブドウちゃん</h3>
                         <p className="text-orange-600 font-medium text-sm">姫路の種 運営編集長</p>
