@@ -496,6 +496,7 @@ export default function Component() {
                     { name: "和歌山県橋本市", desc: "高野山の玄関口", url: "https://www.city.hashimoto.wakayama.jp/" },
                     { name: "山梨県山中湖村", desc: "富士山麓の山中湖畔", url: "https://www.vill.yamanakako.lg.jp/" },
                     { name: "広島県神石高原町", desc: "中国山地の自然豊かな町", url: "https://www.town.jinsekikogen.lg.jp/" },
+                    { name: "熊本県あさぎり町", desc: "球磨地方の自然豊かな町", url: "https://www.town.asagiri.lg.jp/" },
                     { name: "地域おこし協力隊", desc: "地域活性化の推進", url: null },
                   ].map((partner) => (
                     <Card key={partner.name} className="text-center border hover:border-blue-200 hover:shadow transition-all">
