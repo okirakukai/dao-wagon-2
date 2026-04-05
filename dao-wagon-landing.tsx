@@ -174,6 +174,90 @@ export default function Component() {
                   </div>
                 ))}
               </div>
+
+              {/* Day 4 Route Detail */}
+              <div className="w-full max-w-4xl mt-12">
+                <Card className="bg-white/10 backdrop-blur-md border-2 border-white/20 shadow-2xl">
+                  <CardHeader className="text-center pb-4">
+                    <div className="flex items-center justify-center gap-3 mb-2">
+                      <Badge className="bg-orange-500 text-white border-0 px-4 py-1 text-sm font-bold">
+                        DAY 4/6
+                      </Badge>
+                      <Badge className="bg-green-500 text-white border-0 px-3 py-1 text-xs font-medium">
+                        賢く旅する
+                      </Badge>
+                    </div>
+                    <CardTitle className="text-2xl md:text-3xl text-white font-bold">
+                      最終行程ルート
+                    </CardTitle>
+                    <CardDescription className="text-blue-100 text-base">
+                      熊本から山口へ - 九州北上ルート
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-6">
+                    {/* Route Flow */}
+                    <div className="flex flex-wrap justify-center items-center gap-2 md:gap-3">
+                      {[
+                        { name: "熊本県あさぎり町", highlight: false },
+                        { name: "人吉・八代", highlight: true },
+                        { name: "美里町 3333段の石段", highlight: false },
+                        { name: "久留米", highlight: false },
+                        { name: "福岡空港", highlight: false },
+                        { name: "山口県下松市", highlight: false }
+                      ].map((location, index) => (
+                        <div key={location.name} className="flex items-center gap-2">
+                          <Badge 
+                            className={`px-3 py-2 text-sm font-medium ${
+                              location.highlight 
+                                ? 'bg-gradient-to-r from-green-400 to-emerald-500 text-white border-0' 
+                                : 'bg-white/20 text-white border border-white/30'
+                            }`}
+                          >
+                            {location.name}
+                          </Badge>
+                          {index < 5 && <span className="text-orange-400 font-bold text-lg">→</span>}
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Trivia Badge */}
+                    <div className="flex justify-center">
+                      <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-400/50 rounded-xl p-4 max-w-2xl">
+                        <div className="flex items-start gap-3">
+                          <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center shrink-0">
+                            <Car className="h-5 w-5 text-white" />
+                          </div>
+                          <div>
+                            <p className="text-green-300 font-bold text-sm mb-1">豆知識</p>
+                            <p className="text-white text-sm leading-relaxed">
+                              人吉〜八代は<span className="text-green-300 font-semibold">災害復興の代替路として高速無料区間</span>を活用。
+                              DAOワゴンは地域の事情を理解し、賢くルートを選びます。
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Highlights */}
+                    <div className="grid md:grid-cols-2 gap-4 mt-4">
+                      <div className="bg-white/10 rounded-xl p-4 border border-white/20">
+                        <div className="flex items-center gap-2 mb-2">
+                          <MapPin className="h-5 w-5 text-orange-400" />
+                          <span className="text-white font-semibold">美里町 3333段の石段</span>
+                        </div>
+                        <p className="text-blue-100 text-sm">日本一の石段として知られる名所。挑戦者求む！</p>
+                      </div>
+                      <div className="bg-white/10 rounded-xl p-4 border border-white/20">
+                        <div className="flex items-center gap-2 mb-2">
+                          <Route className="h-5 w-5 text-green-400" />
+                          <span className="text-white font-semibold">人吉・八代 無料高速</span>
+                        </div>
+                        <p className="text-blue-100 text-sm">令和2年豪雨からの復興支援として無料開放中の区間を活用</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </section>
