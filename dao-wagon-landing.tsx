@@ -175,84 +175,129 @@ export default function Component() {
                 ))}
               </div>
 
-              {/* Day 4 Route Detail */}
+              {/* First Half Goal - Himeji to Saji */}
               <div className="w-full max-w-4xl mt-12">
-                <Card className="bg-white/10 backdrop-blur-md border-2 border-white/20 shadow-2xl">
+                <Card className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-md border-2 border-green-400/50 shadow-2xl">
                   <CardHeader className="text-center pb-4">
                     <div className="flex items-center justify-center gap-3 mb-2">
-                      <Badge className="bg-orange-500 text-white border-0 px-4 py-1 text-sm font-bold">
-                        DAY 4/6
+                      <Badge className="bg-green-500 text-white border-0 px-4 py-1 text-sm font-bold animate-pulse">
+                        前半ゴール
                       </Badge>
-                      <Badge className="bg-green-500 text-white border-0 px-3 py-1 text-xs font-medium">
-                        賢く旅する
+                      <Badge className="bg-yellow-500 text-white border-0 px-3 py-1 text-xs font-medium">
+                        現在地：佐治
                       </Badge>
                     </div>
                     <CardTitle className="text-2xl md:text-3xl text-white font-bold">
-                      最終行程ルート
+                      前半最終ルート達成！
                     </CardTitle>
-                    <CardDescription className="text-blue-100 text-base">
-                      熊本から山口へ - 九州北上ルート
+                    <CardDescription className="text-green-100 text-base">
+                      姫路から佐治へ - 前半の旅完走
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-6">
                     {/* Route Flow */}
                     <div className="flex flex-wrap justify-center items-center gap-2 md:gap-3">
                       {[
-                        { name: "熊本県あさぎり町", highlight: false },
-                        { name: "人吉・八代", highlight: true },
-                        { name: "美里町 3333段の石段", highlight: false },
-                        { name: "久留米", highlight: false },
-                        { name: "福岡空港", highlight: false },
-                        { name: "山口県下松市", highlight: false }
+                        { name: "姫路", highlight: false },
+                        { name: "鳥取佐治", highlight: true, isGoal: true }
                       ].map((location, index) => (
                         <div key={location.name} className="flex items-center gap-2">
                           <Badge 
-                            className={`px-3 py-2 text-sm font-medium ${
-                              location.highlight 
-                                ? 'bg-gradient-to-r from-green-400 to-emerald-500 text-white border-0' 
+                            className={`px-4 py-2 text-base font-semibold ${
+                              location.isGoal 
+                                ? 'bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-0 shadow-lg' 
                                 : 'bg-white/20 text-white border border-white/30'
                             }`}
                           >
+                            {location.isGoal && <MapPin className="inline h-4 w-4 mr-1" />}
                             {location.name}
+                            {location.isGoal && ' GOAL!'}
                           </Badge>
-                          {index < 5 && <span className="text-orange-400 font-bold text-lg">→</span>}
+                          {index < 1 && <span className="text-green-400 font-bold text-xl">→</span>}
                         </div>
                       ))}
                     </div>
 
-                    {/* Trivia Badge */}
-                    <div className="flex justify-center">
-                      <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-400/50 rounded-xl p-4 max-w-2xl">
-                        <div className="flex items-start gap-3">
-                          <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center shrink-0">
-                            <Car className="h-5 w-5 text-white" />
-                          </div>
-                          <div>
-                            <p className="text-green-300 font-bold text-sm mb-1">豆知識</p>
-                            <p className="text-white text-sm leading-relaxed">
-                              人吉〜八代は<span className="text-green-300 font-semibold">災害復興の代替路として高速無料区間</span>を活用。
-                              DAOワゴンは地域の事情を理解し、賢くルートを選びます。
-                            </p>
-                          </div>
-                        </div>
-                      </div>
+                    {/* Goal Photo */}
+                    <div className="w-full rounded-xl overflow-hidden border-4 border-green-400/30 shadow-xl">
+                      <Image
+                        src="/images/season5-goal-saji.jpg"
+                        alt="シーズン5前半ゴール - 佐治到着"
+                        width={800}
+                        height={450}
+                        className="w-full h-auto"
+                      />
                     </div>
 
-                    {/* Highlights */}
-                    <div className="grid md:grid-cols-2 gap-4 mt-4">
-                      <div className="bg-white/10 rounded-xl p-4 border border-white/20">
-                        <div className="flex items-center gap-2 mb-2">
-                          <MapPin className="h-5 w-5 text-orange-400" />
-                          <span className="text-white font-semibold">美里町 3333段の石段</span>
+                    {/* Next Phase Info */}
+                    <div className="bg-gradient-to-r from-orange-500/20 to-red-500/20 border border-orange-400/50 rounded-xl p-4">
+                      <div className="flex items-center justify-center gap-3 text-center">
+                        <Sparkles className="h-6 w-6 text-orange-400" />
+                        <div>
+                          <p className="text-orange-300 font-bold text-lg">後半スタート</p>
+                          <p className="text-white text-base">
+                            <span className="font-semibold text-yellow-300">4月12日（土）夜</span> より九州へ向けて出発！
+                          </p>
                         </div>
-                        <p className="text-blue-100 text-sm">日本一の石段として知られる名所。挑戦者求む！</p>
+                        <Sparkles className="h-6 w-6 text-orange-400" />
                       </div>
-                      <div className="bg-white/10 rounded-xl p-4 border border-white/20">
-                        <div className="flex items-center gap-2 mb-2">
-                          <Route className="h-5 w-5 text-green-400" />
-                          <span className="text-white font-semibold">人吉・八代 無料高速</span>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Second Half Final Goal - Shiga to Tokyo */}
+              <div className="w-full max-w-4xl mt-8">
+                <Card className="bg-gradient-to-br from-blue-500/20 to-indigo-500/20 backdrop-blur-md border-2 border-blue-400/50 shadow-2xl">
+                  <CardHeader className="text-center pb-4">
+                    <div className="flex items-center justify-center gap-3 mb-2">
+                      <Badge className="bg-blue-500 text-white border-0 px-4 py-1 text-sm font-bold">
+                        後半ゴール予定
+                      </Badge>
+                      <Badge className="bg-orange-500 text-white border-0 px-3 py-1 text-xs font-medium">
+                        最終行程
+                      </Badge>
+                    </div>
+                    <CardTitle className="text-2xl md:text-3xl text-white font-bold">
+                      後半最終ルート
+                    </CardTitle>
+                    <CardDescription className="text-blue-100 text-base">
+                      滋賀から東京へ - シーズン5完走予定
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-6">
+                    {/* Route Flow */}
+                    <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4">
+                      {[
+                        { name: "滋賀", highlight: false, isGoal: false },
+                        { name: "長野県川上村", highlight: false, isGoal: false },
+                        { name: "東京", highlight: true, isGoal: true }
+                      ].map((location, index) => (
+                        <div key={location.name} className="flex items-center gap-3">
+                          <Badge 
+                            className={`px-4 py-2 text-base font-semibold ${
+                              location.isGoal 
+                                ? 'bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-0 shadow-lg' 
+                                : 'bg-white/20 text-white border border-white/30'
+                            }`}
+                          >
+                            {location.isGoal && <MapPin className="inline h-4 w-4 mr-1" />}
+                            {location.name}
+                            {location.isGoal && ' GOAL!'}
+                          </Badge>
+                          {index < 2 && <span className="text-blue-400 font-bold text-xl">→</span>}
                         </div>
-                        <p className="text-blue-100 text-sm">令和2年豪雨からの復興支援として無料開放中の区間を活用</p>
+                      ))}
+                    </div>
+
+                    {/* Completion Message */}
+                    <div className="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-400/50 rounded-xl p-4 text-center">
+                      <div className="flex items-center justify-center gap-2">
+                        <Sparkles className="h-5 w-5 text-yellow-400" />
+                        <p className="text-white text-base">
+                          九州・中国地方を巡り、<span className="font-semibold text-yellow-300">長野を経由して東京</span>へ
+                        </p>
+                        <Sparkles className="h-5 w-5 text-yellow-400" />
                       </div>
                     </div>
                   </CardContent>
