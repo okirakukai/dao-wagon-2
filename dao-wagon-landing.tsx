@@ -175,20 +175,91 @@ export default function Component() {
                 ))}
               </div>
 
-              {/* Day 4 Route Detail */}
+              {/* First Half Goal - Himeji to Saji */}
               <div className="w-full max-w-4xl mt-12">
+                <Card className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-md border-2 border-green-400/50 shadow-2xl">
+                  <CardHeader className="text-center pb-4">
+                    <div className="flex items-center justify-center gap-3 mb-2">
+                      <Badge className="bg-green-500 text-white border-0 px-4 py-1 text-sm font-bold animate-pulse">
+                        前半ゴール
+                      </Badge>
+                      <Badge className="bg-yellow-500 text-white border-0 px-3 py-1 text-xs font-medium">
+                        現在地：佐治
+                      </Badge>
+                    </div>
+                    <CardTitle className="text-2xl md:text-3xl text-white font-bold">
+                      前半最終ルート達成！
+                    </CardTitle>
+                    <CardDescription className="text-green-100 text-base">
+                      姫路から佐治へ - 前半の旅完走
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-6">
+                    {/* Route Flow */}
+                    <div className="flex flex-wrap justify-center items-center gap-2 md:gap-3">
+                      {[
+                        { name: "姫路", highlight: false },
+                        { name: "鳥取佐治", highlight: true, isGoal: true }
+                      ].map((location, index) => (
+                        <div key={location.name} className="flex items-center gap-2">
+                          <Badge 
+                            className={`px-4 py-2 text-base font-semibold ${
+                              location.isGoal 
+                                ? 'bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-0 shadow-lg' 
+                                : 'bg-white/20 text-white border border-white/30'
+                            }`}
+                          >
+                            {location.isGoal && <MapPin className="inline h-4 w-4 mr-1" />}
+                            {location.name}
+                            {location.isGoal && ' GOAL!'}
+                          </Badge>
+                          {index < 1 && <span className="text-green-400 font-bold text-xl">→</span>}
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Goal Photo */}
+                    <div className="w-full rounded-xl overflow-hidden border-4 border-green-400/30 shadow-xl">
+                      <Image
+                        src="/images/season5-goal-saji.jpg"
+                        alt="シーズン5前半ゴール - 佐治到着"
+                        width={800}
+                        height={450}
+                        className="w-full h-auto"
+                      />
+                    </div>
+
+                    {/* Next Phase Info */}
+                    <div className="bg-gradient-to-r from-orange-500/20 to-red-500/20 border border-orange-400/50 rounded-xl p-4">
+                      <div className="flex items-center justify-center gap-3 text-center">
+                        <Sparkles className="h-6 w-6 text-orange-400" />
+                        <div>
+                          <p className="text-orange-300 font-bold text-lg">後半スタート</p>
+                          <p className="text-white text-base">
+                            <span className="font-semibold text-yellow-300">4月12日（土）夜</span> より九州へ向けて出発！
+                          </p>
+                        </div>
+                        <Sparkles className="h-6 w-6 text-orange-400" />
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Day 4 Route Detail - Future */}
+              <div className="w-full max-w-4xl mt-8">
                 <Card className="bg-white/10 backdrop-blur-md border-2 border-white/20 shadow-2xl">
                   <CardHeader className="text-center pb-4">
                     <div className="flex items-center justify-center gap-3 mb-2">
-                      <Badge className="bg-orange-500 text-white border-0 px-4 py-1 text-sm font-bold">
-                        DAY 4/6
+                      <Badge className="bg-blue-500 text-white border-0 px-4 py-1 text-sm font-bold">
+                        後半 DAY 4/6
                       </Badge>
                       <Badge className="bg-green-500 text-white border-0 px-3 py-1 text-xs font-medium">
                         賢く旅する
                       </Badge>
                     </div>
                     <CardTitle className="text-2xl md:text-3xl text-white font-bold">
-                      最終行程ルート
+                      後半最終行程ルート（予定）
                     </CardTitle>
                     <CardDescription className="text-blue-100 text-base">
                       熊本から山口へ - 九州北上ルート
