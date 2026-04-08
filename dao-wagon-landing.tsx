@@ -246,7 +246,7 @@ export default function Component() {
                 </Card>
               </div>
 
-              {/* Second Half Final Goal - Kudamatsu to Saji */}
+              {/* Second Half Final Goal - Shiga to Tokyo */}
               <div className="w-full max-w-4xl mt-8">
                 <Card className="bg-gradient-to-br from-blue-500/20 to-indigo-500/20 backdrop-blur-md border-2 border-blue-400/50 shadow-2xl">
                   <CardHeader className="text-center pb-4">
@@ -262,16 +262,16 @@ export default function Component() {
                       後半最終ルート
                     </CardTitle>
                     <CardDescription className="text-blue-100 text-base">
-                      山口から佐治へ - シーズン5完走予定
+                      滋賀から東京へ - シーズン5完走予定
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-6">
                     {/* Route Flow */}
                     <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4">
                       {[
-                        { name: "山口県下松市", highlight: false, isGoal: false },
-                        { name: "兵庫県姫路市", highlight: false, isGoal: false },
-                        { name: "鳥取佐治", highlight: true, isGoal: true }
+                        { name: "滋賀", highlight: false, isGoal: false },
+                        { name: "長野県川上村", highlight: false, isGoal: false },
+                        { name: "東京", highlight: true, isGoal: true }
                       ].map((location, index) => (
                         <div key={location.name} className="flex items-center gap-3">
                           <Badge 
@@ -295,7 +295,7 @@ export default function Component() {
                       <div className="flex items-center justify-center gap-2">
                         <Sparkles className="h-5 w-5 text-yellow-400" />
                         <p className="text-white text-base">
-                          九州を巡り、再び<span className="font-semibold text-yellow-300">星の最もきれいな場所・佐治</span>へ帰還
+                          九州・中国地方を巡り、<span className="font-semibold text-yellow-300">長野を経由して東京</span>へ
                         </p>
                         <Sparkles className="h-5 w-5 text-yellow-400" />
                       </div>
