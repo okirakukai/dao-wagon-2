@@ -138,18 +138,19 @@ export default function Component() {
           </div>
           <div className="container px-4 md:px-6 mx-auto relative">
             <div className="flex flex-col items-center space-y-8">
-              <Badge className="bg-orange-500 text-white border-0 px-6 py-2 text-lg font-bold">
-                NEW
+              <Badge className="bg-green-500 text-white border-0 px-6 py-2 text-lg font-bold">
+                完走報告
               </Badge>
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-center">
-                シーズン5：鳥取出発〜四国・九州縦断
+                シーズン5 完走しました！
                 <br />
-                <span className="text-orange-400">2,200kmの旅</span>
+                <span className="text-orange-400">総移動距離5,357km・総移動時間153時間の大冒険</span>
               </h2>
               <p className="mx-auto max-w-[800px] text-blue-100 md:text-lg text-center leading-relaxed">
-                DAOワゴン史上最大スケール！鳥取を出発し、香川、高知、愛媛からフェリーで九州へ。
-                宮崎、鹿児島（甑島）、熊本、福岡を経て山口から帰還する、
-                <span className="text-orange-300 font-semibold">総移動距離2,200km、総運転時間32時間</span>の超大作ルートです。
+                事前の想定を大きく超え、総移動距離5,357km、総移動時間153時間の大冒険として無事完走しました！
+                前半は鳥取を出発し、ブドウちゃんをゲストに四国から九州（宮崎、鹿児島・甑島、熊本、福岡など）を縦断。
+                後半は滋賀、長野、東京、栃木、富山（雪の立山室堂平）、京都などを巡り、全国の拠点を結んで鳥取へ帰還しました。
+                <span className="block mt-4 text-orange-300 font-semibold">各地で出会ってくれた皆様、ありがとうございました！</span>
               </p>
 
               {/* Route Map */}
@@ -165,143 +166,118 @@ export default function Component() {
 
               {/* Route Badges */}
               <div className="flex flex-wrap justify-center gap-2 md:gap-3 max-w-4xl">
-                {["鳥取", "兵庫", "香川", "高知", "愛媛", "大分", "宮崎", "鹿児島", "熊本", "福岡", "山口"].map((location, index) => (
-                  <div key={location} className="flex items-center gap-1 md:gap-2">
-                    <Badge className="bg-white/20 text-white border border-white/30 px-3 py-1 text-sm md:text-base font-medium backdrop-blur-sm">
+                {["鳥取", "兵庫", "香川", "高知", "愛媛", "大分", "宮崎", "鹿児島", "熊本", "福岡", "山口", "滋賀", "長野", "東京", "栃木", "富山", "京都", "鳥取"].map((location, index) => (
+                  <div key={`${location}-${index}`} className="flex items-center gap-1 md:gap-2">
+                    <Badge className={`${index === 17 ? 'bg-gradient-to-r from-yellow-400 to-orange-500' : 'bg-white/20'} text-white border border-white/30 px-3 py-1 text-sm md:text-base font-medium backdrop-blur-sm`}>
                       {location}
+                      {index === 17 && ' GOAL!'}
                     </Badge>
-                    {index < 10 && <span className="text-orange-400 font-bold text-lg">→</span>}
+                    {index < 17 && <span className="text-orange-400 font-bold text-lg">→</span>}
                   </div>
                 ))}
               </div>
 
-              {/* First Half Goal - Himeji to Saji */}
+              {/* Goal Card */}
               <div className="w-full max-w-4xl mt-12">
                 <Card className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-md border-2 border-green-400/50 shadow-2xl">
                   <CardHeader className="text-center pb-4">
                     <div className="flex items-center justify-center gap-3 mb-2">
-                      <Badge className="bg-green-500 text-white border-0 px-4 py-1 text-sm font-bold animate-pulse">
-                        前半ゴール
-                      </Badge>
-                      <Badge className="bg-yellow-500 text-white border-0 px-3 py-1 text-xs font-medium">
-                        現在地：佐治
+                      <Badge className="bg-green-500 text-white border-0 px-4 py-1 text-sm font-bold">
+                        シーズン5 完走
                       </Badge>
                     </div>
                     <CardTitle className="text-2xl md:text-3xl text-white font-bold">
-                      前半最終ルート達成！
+                      鳥取へ帰還 - 全行程達成！
                     </CardTitle>
-                    <CardDescription className="text-green-100 text-base">
-                      姫路から佐治へ - 前半の旅完走
-                    </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-6">
-                    {/* Route Flow */}
-                    <div className="flex flex-wrap justify-center items-center gap-2 md:gap-3">
-                      {[
-                        { name: "姫路", highlight: false },
-                        { name: "鳥取佐治", highlight: true, isGoal: true }
-                      ].map((location, index) => (
-                        <div key={location.name} className="flex items-center gap-2">
-                          <Badge 
-                            className={`px-4 py-2 text-base font-semibold ${
-                              location.isGoal 
-                                ? 'bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-0 shadow-lg' 
-                                : 'bg-white/20 text-white border border-white/30'
-                            }`}
-                          >
-                            {location.isGoal && <MapPin className="inline h-4 w-4 mr-1" />}
-                            {location.name}
-                            {location.isGoal && ' GOAL!'}
-                          </Badge>
-                          {index < 1 && <span className="text-green-400 font-bold text-xl">→</span>}
-                        </div>
-                      ))}
-                    </div>
-
                     {/* Goal Photo */}
                     <div className="w-full rounded-xl overflow-hidden border-4 border-green-400/30 shadow-xl">
                       <Image
                         src="/images/season5-goal-saji.jpg"
-                        alt="シーズン5前半ゴール - 佐治到着"
+                        alt="シーズン5完走 - 鳥取帰還"
                         width={800}
                         height={450}
                         className="w-full h-auto"
                       />
                     </div>
 
-                    {/* Next Phase Info */}
-                    <div className="bg-gradient-to-r from-orange-500/20 to-red-500/20 border border-orange-400/50 rounded-xl p-4">
-                      <div className="flex items-center justify-center gap-3 text-center">
-                        <Sparkles className="h-6 w-6 text-orange-400" />
-                        <div>
-                          <p className="text-orange-300 font-bold text-lg">後半スタート</p>
-                          <p className="text-white text-base">
-                            <span className="font-semibold text-yellow-300">4月12日（土）夜</span> より九州へ向けて出発！
-                          </p>
-                        </div>
-                        <Sparkles className="h-6 w-6 text-orange-400" />
+                    {/* Stats */}
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="bg-white/10 rounded-xl p-4 text-center border border-white/20">
+                        <p className="text-3xl md:text-4xl font-bold text-orange-400">5,357km</p>
+                        <p className="text-white/80 text-sm">総移動距離</p>
+                      </div>
+                      <div className="bg-white/10 rounded-xl p-4 text-center border border-white/20">
+                        <p className="text-3xl md:text-4xl font-bold text-orange-400">153時間</p>
+                        <p className="text-white/80 text-sm">総移動時間</p>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
               </div>
+            </div>
+          </div>
+        </section>
 
-              {/* Second Half Final Goal - Shiga to Tokyo */}
-              <div className="w-full max-w-4xl mt-8">
-                <Card className="bg-gradient-to-br from-blue-500/20 to-indigo-500/20 backdrop-blur-md border-2 border-blue-400/50 shadow-2xl">
-                  <CardHeader className="text-center pb-4">
-                    <div className="flex items-center justify-center gap-3 mb-2">
-                      <Badge className="bg-blue-500 text-white border-0 px-4 py-1 text-sm font-bold">
-                        後半ゴール予定
-                      </Badge>
-                      <Badge className="bg-orange-500 text-white border-0 px-3 py-1 text-xs font-medium">
-                        最終行程
-                      </Badge>
+        {/* Season 6 Coming Soon Section */}
+        <section className="w-full py-12 md:py-20 bg-gradient-to-br from-purple-600 via-indigo-700 to-blue-800 text-white relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-20 right-20 w-60 h-60 bg-pink-400 rounded-full blur-3xl" />
+            <div className="absolute bottom-20 left-20 w-40 h-40 bg-purple-400 rounded-full blur-3xl" />
+          </div>
+          <div className="container px-4 md:px-6 mx-auto relative">
+            <div className="flex flex-col items-center space-y-8 text-center">
+              <Badge className="bg-gradient-to-r from-pink-500 to-purple-500 text-white border-0 px-6 py-2 text-lg font-bold animate-pulse">
+                COMING SOON
+              </Badge>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+                シーズン6のお知らせ
+                <br />
+                <span className="text-pink-300">次はあなたが企画する番です！</span>
+              </h2>
+              <p className="mx-auto max-w-[800px] text-purple-100 md:text-lg leading-relaxed">
+                次回のシーズン6は「あなたも参加できる、誰でも企画できるプロジェクト」としてスタートします。
+                単なる相乗りだけでなく、あなたの地元を巡るルートや、新しいミートアップなど、
+                誰もが自由にDAOワゴンを使った企画を提案し、実行できます。
+              </p>
+
+              <div className="grid md:grid-cols-3 gap-6 w-full max-w-4xl mt-8">
+                <Card className="bg-white/10 backdrop-blur-md border border-white/20">
+                  <CardHeader className="text-center">
+                    <div className="mx-auto w-16 h-16 bg-gradient-to-br from-pink-500 to-purple-500 rounded-2xl flex items-center justify-center mb-4">
+                      <Route className="h-8 w-8 text-white" />
                     </div>
-                    <CardTitle className="text-2xl md:text-3xl text-white font-bold">
-                      後半最終ルート
-                    </CardTitle>
-                    <CardDescription className="text-blue-100 text-base">
-                      滋賀から東京へ - シーズン5完走予定
-                    </CardDescription>
+                    <CardTitle className="text-xl text-white">ルートを企画</CardTitle>
+                    <CardDescription className="text-purple-200">あなたの地元を巡るルートを提案できます</CardDescription>
                   </CardHeader>
-                  <CardContent className="space-y-6">
-                    {/* Route Flow */}
-                    <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4">
-                      {[
-                        { name: "滋賀", highlight: false, isGoal: false },
-                        { name: "長野県川上村", highlight: false, isGoal: false },
-                        { name: "東京", highlight: true, isGoal: true }
-                      ].map((location, index) => (
-                        <div key={location.name} className="flex items-center gap-3">
-                          <Badge 
-                            className={`px-4 py-2 text-base font-semibold ${
-                              location.isGoal 
-                                ? 'bg-gradient-to-r from-yellow-400 to-orange-500 text-white border-0 shadow-lg' 
-                                : 'bg-white/20 text-white border border-white/30'
-                            }`}
-                          >
-                            {location.isGoal && <MapPin className="inline h-4 w-4 mr-1" />}
-                            {location.name}
-                            {location.isGoal && ' GOAL!'}
-                          </Badge>
-                          {index < 2 && <span className="text-blue-400 font-bold text-xl">→</span>}
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Completion Message */}
-                    <div className="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-400/50 rounded-xl p-4 text-center">
-                      <div className="flex items-center justify-center gap-2">
-                        <Sparkles className="h-5 w-5 text-yellow-400" />
-                        <p className="text-white text-base">
-                          九州・中国地方を巡り、<span className="font-semibold text-yellow-300">長野を経由して東京</span>へ
-                        </p>
-                        <Sparkles className="h-5 w-5 text-yellow-400" />
-                      </div>
-                    </div>
-                  </CardContent>
                 </Card>
+
+                <Card className="bg-white/10 backdrop-blur-md border border-white/20">
+                  <CardHeader className="text-center">
+                    <div className="mx-auto w-16 h-16 bg-gradient-to-br from-orange-500 to-pink-500 rounded-2xl flex items-center justify-center mb-4">
+                      <Users className="h-8 w-8 text-white" />
+                    </div>
+                    <CardTitle className="text-xl text-white">ミートアップ開催</CardTitle>
+                    <CardDescription className="text-purple-200">新しい出会いの場を企画・開催できます</CardDescription>
+                  </CardHeader>
+                </Card>
+
+                <Card className="bg-white/10 backdrop-blur-md border border-white/20">
+                  <CardHeader className="text-center">
+                    <div className="mx-auto w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mb-4">
+                      <Sparkles className="h-8 w-8 text-white" />
+                    </div>
+                    <CardTitle className="text-xl text-white">自由な参加</CardTitle>
+                    <CardDescription className="text-purple-200">誰でも気軽に参加・企画が可能です</CardDescription>
+                  </CardHeader>
+                </Card>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 max-w-2xl">
+                <p className="text-purple-100 text-base">
+                  企画や参加の詳細はコミュニティで随時発表しますので、ぜひご参加ください！
+                </p>
               </div>
             </div>
           </div>
